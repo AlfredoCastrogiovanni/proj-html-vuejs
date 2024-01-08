@@ -19,9 +19,6 @@ import { faLifeRing } from '@fortawesome/free-solid-svg-icons'
 import { faBook } from '@fortawesome/free-solid-svg-icons'
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
 
-
-
-
 /* add icons to the library */
 library.add(faTwitter, faFacebookF, faInstagram, faLinkedinIn, faAngleDown, faClock, faRulerCombined, faLifeRing, faBook, faCartShopping)
 
