@@ -5,6 +5,11 @@
 
     export default {
     name: "AppVue",
+    data() {
+        return {
+            navLinks: ['Home','Pages','Courses','Features','Blog','Shop']
+        }
+    },
     components: {
         AppHeader,
         AppMain,
@@ -14,7 +19,7 @@
 </script>
 
 <template>
-    <AppHeader/>
+    <AppHeader :navLinks="navLinks"/>
     <AppMain/>
     <AppFooter/>
 </template>
