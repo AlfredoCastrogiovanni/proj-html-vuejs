@@ -21,7 +21,7 @@
     @use '../scss/partials/variables' as *;
 
     .toolBar {
-        position: absolute;
+        position: fixed;
         top: 200px;
         right: 0;
         z-index: 10;
