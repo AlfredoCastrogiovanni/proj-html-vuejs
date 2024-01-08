@@ -24,7 +24,9 @@
         position: absolute;
         top: 200px;
         right: 0;
+        z-index: 10;
         border-radius: 5px 0 0 5px;
+        background-color: white;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
         ul {
@@ -32,10 +34,16 @@
             
             li {
                 padding: 0.75rem 0.5rem 0.75rem 0.75rem;
+                color: $titles-color;
 
                 &:nth-child(3) {
                     position: relative;
                     left: 1px;
+                }
+
+                &:nth-child(4) {
+                    position: relative;
+                    left: -2px;
                 }
             }
         }

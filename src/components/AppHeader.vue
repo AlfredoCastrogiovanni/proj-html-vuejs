@@ -56,6 +56,7 @@
 
             nav {
                 height: 100%;
+                @include flex(row, center, center);
 
                 ul {
                     height: 100%;

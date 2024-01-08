@@ -1,9 +1,10 @@
 <script>
+    import ToolBar from './components/ToolBar.vue';
     import CallToAction from './components/CallToAction.vue';
     import AppHeader from './components/AppHeader.vue';
+    import AppHero from './components/AppHero.vue';
     import AppMain from './components/AppMain.vue';
     import AppFooter from './components/AppFooter.vue';
-    import ToolBar from './components/ToolBar.vue';
 
     export default {
     name: "AppVue",
@@ -13,11 +14,12 @@
         }
     },
     components: {
+        ToolBar,
+        CallToAction,
         AppHeader,
+        AppHero,
         AppMain,
         AppFooter,
-        CallToAction,
-        ToolBar
     }
     }
 </script>
@@ -26,6 +28,7 @@
     <ToolBar/>
     <CallToAction/>
     <AppHeader :navLinks="navLinks"/>
+    <AppHero/>
     <AppMain/>
     <AppFooter/>
 </template>
