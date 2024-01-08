@@ -3,6 +3,7 @@
     import AppHeader from './components/AppHeader.vue';
     import AppMain from './components/AppMain.vue';
     import AppFooter from './components/AppFooter.vue';
+    import ToolBar from './components/ToolBar.vue';
 
     export default {
     name: "AppVue",
@@ -15,12 +16,14 @@
         AppHeader,
         AppMain,
         AppFooter,
-        CallToAction
+        CallToAction,
+        ToolBar
     }
     }
 </script>
 
 <template>
+    <ToolBar/>
     <CallToAction/>
     <AppHeader :navLinks="navLinks"/>
     <AppMain/>
