@@ -78,6 +78,8 @@
                     <img src="../assets/img/video/icon-youtube-play.png" alt="" class="play-button">
                     <img src="../assets/img/video/maxcoach-shape-12-150x150.png" alt="" class="shape1">
                     <img src="../assets/img/video/maxcoach-shape-05-150x150.png" alt="" class="shape2">
+                    <div class="circle"></div>
+                    <img src="../assets/img/video/shape-02.svg" alt="" class="shape3">
                 </div>
                 <img src="../assets/img/video/wave.svg" alt="" class="wave">
             </div>
@@ -146,6 +148,11 @@
                 .options-card {
                     width: calc(100% / 4 - 2rem);
                     margin-right: 2rem;
+                    position: relative;
+
+                    &:nth-child(even) {
+                        top: 25px;
+                    }
 
                     .img-wrapper {
                         height: 120px;
@@ -273,6 +280,25 @@
                     top: -20px;
                     left: -20px;
                     z-index: -1;
+                }
+
+                .shape3 {
+                    position: absolute;
+                    top: -45px;
+                    left: -125px;
+                    z-index: -2;
+                }
+
+                .circle {
+                    width: 90px;
+                    height: 90px;
+                    border-radius: 50%;
+                    border: 12px solid #ECC5AB;
+
+                    position: absolute;
+                    top: 95px;
+                    right: -75px;
+                    z-index: 5;
                 }
 
             }
