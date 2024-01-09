@@ -1,6 +1,15 @@
 <script>
+    import 'vue3-carousel/dist/carousel.css'
+    import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
+
     export default {
-    name: "AppMain"
+    name: "AppMain",
+    components: {
+        Carousel,
+        Slide,
+        Pagination,
+        Navigation,
+    }
     }
 </script>
 
@@ -84,6 +93,81 @@
                 <img src="../assets/img/video/wave.svg" alt="" class="wave">
             </div>
         </section>
+        <!-- TESTIMONIALS -->
+        <section class="testimonials">
+            <div class="titles">
+                <div class="hand-writing">Testimonials</div>
+                <div class="title">Why do people love me?</div>
+            </div>
+            <div class="carousel-wrapper">
+                <Carousel wrap-around="true" itemsToShow="3">
+                    <Slide :key="0">
+                    <div class="slide">
+                        <h2>High level of efficiency and scientific teaching methods</h2>
+                        <p>I am free to learn at my own pace, follow my own schedule and choose the subject I want to learn from the syllabus. Great study portal for people like me.</p>
+                        <div class="author">
+                            <div class="img-wrapper">
+                                <img src="../assets/img/testimonials/artist-testimonial-avatar-04.jpg" alt="">
+                            </div>
+                            <div class="info">
+                                <p class="name">Mina Hollace</p>
+                                <p class="job">/ Freelancer</p>
+                            </div>
+                        </div>
+                    </div>
+                    </Slide>
+                    <Slide :key="1">
+                    <div class="slide">
+                        <h2>Professional team of specialists and passionate mentors at reach</h2>
+                        <p>I need to get a certification for English proficiency and MaxCoach is my best choice. Their tutors are smart and professional when dealing with students.</p>
+                        <div class="author">
+                            <div class="img-wrapper">
+                                <img src="../assets/img/testimonials/artist-testimonial-avatar-01.jpg" alt="">
+                            </div>
+                            <div class="info">
+                                <p class="name">Madley Pondor</p>
+                                <p class="job">/ IT Specialist</p>
+                            </div>
+                        </div>
+                    </div>
+                    </Slide>
+                    <Slide :key="2">
+                    <div class="slide">
+                        <h2>The MaxCoach team works really hard to ensure high quality</h2>
+                        <p>I am happy with their arrangement of lessons and subjects. They reflect a scientific investigation into effective methods to be adopted for learners of all levels.</p>
+                        <div class="author">
+                            <div class="img-wrapper">
+                                <img src="../assets/img/testimonials/artist-testimonial-avatar-03.jpg" alt="">
+                            </div>
+                            <div class="info">
+                                <p class="name">Luvic Dubble</p>
+                                <p class="job">/ Private Tutor</p>
+                            </div>
+                        </div>
+                    </div>
+                    </Slide>
+                    <Slide :key="3">
+                    <div class="slide">
+                        <h2>It's a choice of quality for people with special needs</h2>
+                        <p>I'm a very strict person so I require everything to be organized and neat. Then, I'll be able to make things right and shine. MaxCoach guys just got me.</p>
+                        <div class="author">
+                            <div class="img-wrapper">
+                                <img src="../assets/img/testimonials/artist-testimonial-avatar-02.jpg" alt="">
+                            </div>
+                            <div class="info">
+                                <p class="name">Florence Themes</p>
+                                <p class="job">/ Multimedia Admin</p>
+                            </div>
+                        </div>
+                    </div>
+                    </Slide>
+    
+                    <template #addons>
+                        <Pagination />
+                    </template>
+                </Carousel>
+            </div>
+        </section>
     </main>
 </template>
 
@@ -91,6 +175,97 @@
     @use '../scss/general.scss' as *;
     @use '../scss/partials/mixins' as *;
     @use '../scss/partials/variables' as *;
+
+
+    section.testimonials {
+        padding: 1rem 0;
+        background-color: #fbfaf8;
+
+        .titles {
+            margin-bottom: 3rem;
+            text-align: center;
+
+            .hand-writing {
+                font-size: 50px;
+            }
+
+            .title {
+                font-size: 40px;
+                font-weight: 600;
+                color: $titles-color;
+            }
+        }
+
+        .carousel-wrapper {
+            padding: 0 3rem;
+
+            .carousel__viewport {
+                padding: 10px 0 !important;
+            }
+
+            .slide {
+                height: 350px;
+                width: calc(100% - 7rem);
+                margin: 0 0.5rem;
+                padding: 2rem 2.5rem;
+                font-size: 20px;
+                border-radius: 8px;
+                background-color: white;
+                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                text-align: start;
+
+                h2 {
+                    font-size: 18px;
+                    font-weight: 600;
+                    color: $titles-color;
+                    margin-bottom: 1rem;
+                }
+
+                & > p {
+                    margin-bottom: 2rem;
+                    font-size: 16px;
+                    color: $text-color;
+                }
+
+                .author {
+                    @include flex();
+
+                    .img-wrapper {
+                        width: 80px;
+                        height: 80px;
+                        margin-right: 1rem;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            border-radius: 50%;
+                            overflow: hidden;
+                        }
+                    }
+
+                    .info {
+                        @include flex(column, center, center);
+                        .name {
+                            margin-bottom: 0.5rem;
+                            font-size: 14px;
+                            font-weight: 600;
+                            color: $titles-color;
+                        }
+
+                        .job {
+                            font-size: 14px;
+                            color: $text-color;
+                        }
+                    }
+                }
+
+            }
+
+            .carousel__pagination {
+                margin: 3rem 0;
+            }
+        }
+    }
 
     .hand-writing {
         font-family: 'Great Vibes', cursive;
