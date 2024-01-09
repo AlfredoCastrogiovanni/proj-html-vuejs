@@ -6,6 +6,7 @@
 
 <template>
     <main>
+        <!-- OPTIONS -->
         <section class="options">
             <img src="../assets/img/options/maxcoach-shape-13-150x150.png" alt="" class="shape1">
             <img src="../assets/img/options/artist-shape-01-600x577.png" alt="" class="shape2">
@@ -46,6 +47,41 @@
                 </div>
             </div>
         </section>
+        <!-- GARRIX QUOTE -->
+        <section class="garrix-quote">
+            <div class="container">
+                <div class="quote-wrapper">
+                    <div class="img-wrapper">
+                        <img src="../assets/img/artist-quote-icon.png" alt="">
+                    </div>
+                    <div class="quote">I coach and mentor <br> visual artists, like <br> you, to Create Like <br> You Mean It</div>
+                    <div class="hand-writing">Martin Garrix</div>
+                </div>
+                <div class="content">
+                    <p>
+                        As a coach and mentor, my ultimate goal is to motivate visual artists
+                        toward inspired action. I help you get you back on track to being the
+                        productive, creative, meaningful and authentic artist you truly want
+                        to be. I support artists in crafting and living a creative life as well
+                        as feeling good about themselves and their art.
+                    </p>
+                    <p>As an artist and an educator for nearly 30 years, I understand what it takes to create.</p>
+                    <button>Get started today</button>
+                </div>
+            </div>
+        </section>
+        <!-- VIDEO PLAYER -->
+        <section class="video-player">
+            <div class="container">
+                <div class="video-wrapper">
+                    <img src="../assets/img/video/artist-video-poster.jpg" alt="">
+                    <img src="../assets/img/video/icon-youtube-play.png" alt="" class="play-button">
+                    <img src="../assets/img/video/maxcoach-shape-12-150x150.png" alt="" class="shape1">
+                    <img src="../assets/img/video/maxcoach-shape-05-150x150.png" alt="" class="shape2">
+                </div>
+                <img src="../assets/img/video/wave.svg" alt="" class="wave">
+            </div>
+        </section>
     </main>
 </template>
 
@@ -54,6 +90,12 @@
     @use '../scss/partials/mixins' as *;
     @use '../scss/partials/variables' as *;
 
+    .hand-writing {
+        font-family: 'Great Vibes', cursive;
+        color: $secondary-color;
+    }
+
+    // OPTIONS
     section.options {
         padding: 5rem 0;
         position: relative;
@@ -122,6 +164,124 @@
                         padding-right: 1rem;
                     }
                 }
+            }
+        }
+    }
+
+    // GARRIX QUOTE
+    section.garrix-quote {
+        padding: 1rem 0;
+
+        .container {
+            width: 1200px;
+            margin: 0 auto;
+            @include flex(row, center);
+
+            .quote-wrapper{
+                width: calc(100% / 2 - 2rem);
+                margin-right: 2rem;
+                text-align: center;
+
+                .img-wrapper {
+                    height: 35px;
+                    margin-bottom: 20px;
+
+                    img {
+                        height: 100%;
+                    }
+                }
+
+                .quote {
+                    font-size: 40px;
+                    font-weight: 600;
+                    margin-bottom: 1rem;
+                }
+
+                .hand-writing {
+                    font-size: 40px;
+                }
+            }
+
+            .content {
+                width: calc(100% / 2 - 2rem);
+                padding-top: 65px;
+
+                & > p {
+                    font-size: 17px;
+                    color: $text-color;
+                    margin-bottom: 2rem;
+
+                    &:first-of-type {
+                    }
+                }
+
+                button {
+                padding: 1rem 2rem;
+
+                border: none;
+                border-radius: 5px;
+
+                font-size: 13px;
+                font-weight: 800;
+                
+                color: white;
+                background-color: $primary-color;
+                }
+            }
+        }
+    }
+
+    // VIDEO PLAYER
+    section.video-player {
+        padding: 8rem 0;
+        position: relative;
+
+        .container {
+            @include flex(row, center, center);
+
+            .video-wrapper {
+                width: 950px;
+                height: 550px;
+                position: relative;
+                z-index: 3;
+
+                img {
+
+                    &:first-of-type {
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 10px;
+                    }
+                }
+                .play-button {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    z-index: 4;
+                }
+
+                .shape1 {
+                    position: absolute;
+                    bottom: -15px;
+                    right: -85px;
+                    z-index: -1;
+                }
+
+                .shape2 {
+                    position: absolute;
+                    top: -20px;
+                    left: -20px;
+                    z-index: -1;
+                }
+
+            }
+
+            .wave {
+                width: 100%;
+                position: absolute;
+                bottom: 0;
+                z-index: 1;
             }
         }
     }
