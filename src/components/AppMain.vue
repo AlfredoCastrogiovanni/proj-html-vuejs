@@ -176,102 +176,6 @@
     @use '../scss/partials/mixins' as *;
     @use '../scss/partials/variables' as *;
 
-
-    section.testimonials {
-        padding: 1rem 0;
-        background-color: #fbfaf8;
-
-        .titles {
-            margin-bottom: 3rem;
-            text-align: center;
-
-            .hand-writing {
-                font-size: 50px;
-            }
-
-            .title {
-                font-size: 40px;
-                font-weight: 600;
-                color: $titles-color;
-            }
-        }
-
-        .carousel-wrapper {
-            padding: 0 3rem;
-
-            .carousel__viewport {
-                padding: 10px 0 !important;
-            }
-
-            .slide {
-                height: 350px;
-                width: calc(100% - 7rem);
-                margin: 0 0.5rem;
-                padding: 2rem 2.5rem;
-                font-size: 20px;
-                border-radius: 8px;
-                background-color: white;
-                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-                text-align: start;
-
-                h2 {
-                    font-size: 18px;
-                    font-weight: 600;
-                    color: $titles-color;
-                    margin-bottom: 1rem;
-                }
-
-                & > p {
-                    margin-bottom: 2rem;
-                    font-size: 16px;
-                    color: $text-color;
-                }
-
-                .author {
-                    @include flex();
-
-                    .img-wrapper {
-                        width: 80px;
-                        height: 80px;
-                        margin-right: 1rem;
-
-                        img {
-                            width: 100%;
-                            height: 100%;
-                            border-radius: 50%;
-                            overflow: hidden;
-                        }
-                    }
-
-                    .info {
-                        @include flex(column, center, center);
-                        .name {
-                            margin-bottom: 0.5rem;
-                            font-size: 14px;
-                            font-weight: 600;
-                            color: $titles-color;
-                        }
-
-                        .job {
-                            font-size: 14px;
-                            color: $text-color;
-                        }
-                    }
-                }
-
-            }
-
-            .carousel__pagination {
-                margin: 3rem 0;
-            }
-        }
-    }
-
-    .hand-writing {
-        font-family: 'Great Vibes', cursive;
-        color: $secondary-color;
-    }
-
     // OPTIONS
     section.options {
         padding: 5rem 0;
@@ -483,6 +387,97 @@
                 position: absolute;
                 bottom: 0;
                 z-index: 1;
+            }
+        }
+    }
+
+        // TESTIMONIALS
+        section.testimonials {
+        padding: 1rem 0;
+        background-color: #fbfaf8;
+
+        .titles {
+            margin-bottom: 3rem;
+            text-align: center;
+
+            .hand-writing {
+                font-size: 50px;
+            }
+
+            .title {
+                font-size: 40px;
+                font-weight: 600;
+                color: $titles-color;
+            }
+        }
+
+        .carousel-wrapper {
+            padding: 0 3rem;
+
+            .carousel__viewport {
+                padding: 10px 0 !important;
+            }
+
+            .slide {
+                height: 350px;
+                width: calc(100% - 7rem);
+                margin: 0 0.5rem;
+                padding: 2rem 2.5rem;
+                font-size: 20px;
+                border-radius: 8px;
+                background-color: white;
+                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                text-align: start;
+
+                h2 {
+                    font-size: 18px;
+                    font-weight: 600;
+                    color: $titles-color;
+                    margin-bottom: 1rem;
+                }
+
+                & > p {
+                    margin-bottom: 2rem;
+                    font-size: 16px;
+                    color: $text-color;
+                }
+
+                .author {
+                    @include flex();
+
+                    .img-wrapper {
+                        width: 80px;
+                        height: 80px;
+                        margin-right: 1rem;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            border-radius: 50%;
+                            overflow: hidden;
+                        }
+                    }
+
+                    .info {
+                        @include flex(column, center, center);
+                        .name {
+                            margin-bottom: 0.5rem;
+                            font-size: 14px;
+                            font-weight: 600;
+                            color: $titles-color;
+                        }
+
+                        .job {
+                            font-size: 14px;
+                            color: $text-color;
+                        }
+                    }
+                }
+
+            }
+
+            .carousel__pagination {
+                margin: 3rem 0;
             }
         }
     }
