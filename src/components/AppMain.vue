@@ -326,9 +326,6 @@
                     font-size: 17px;
                     color: $text-color;
                     margin-bottom: 2rem;
-
-                    &:first-of-type {
-                    }
                 }
 
                 button {
