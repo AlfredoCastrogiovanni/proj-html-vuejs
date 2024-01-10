@@ -198,6 +198,59 @@
                 </div>
             </div>
         </section>
+        <!-- BLOG -->
+        <section class="blog">
+            <div class="circle"></div>
+            <div class="titles">
+                <div class="hand-writing">Articles and Tips</div>
+                <div class="title">Latest From The Blog</div>
+            </div>
+            <div class="wrapper">
+                <div class="card-sm card-b">
+                    <div class="img-wrapper">
+                        <img src="../assets/img/blog/artist-blog-03-480x356.jpeg" alt="">
+                    </div>
+                    <div class="info">
+                        <p class="topic">Artist</p>
+                        <h2>Brush Strokes Energize Trees in Paintings</h2>
+                        <p class="date"><font-awesome-icon icon="fa-regular fa-calendar" /> May 15, 2020</p>
+                        <p class="view"><font-awesome-icon icon="fa-regular fa-eye" /> 2,125 views</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="../assets/img/blog/shape-02.svg" alt="" class="shape1">
+                    <img src="../assets/img/blog/maxcoach-shape-05-150x150.png" alt="" class="shape2">
+                    <div class="img-wrapper">
+                        <img src="../assets/img/blog/artist-blog-02-500x680.jpg" alt="">
+                    </div>
+                    <div class="info">
+                        <p class="topic">Artist</p>
+                        <h2>Connection Between Self-Portrais and Identity</h2>
+                        <span class="date"><font-awesome-icon icon="fa-regular fa-calendar" /> May 15, 2020</span>
+                        <span class="view"><font-awesome-icon icon="fa-regular fa-eye" /> 2,136 views</span>
+                    </div>
+                </div>
+                <div class="card-sm card-t">
+                    <div class="img-wrapper">
+                        <img src="../assets/img/blog/artist-blog-01-480x356.jpg" alt="">
+                    </div>
+                    <div class="info">
+                        <p class="topic">Artist</p>
+                        <h2>Pocket-Sized Notebooks Hold Miniature Paintings</h2>
+                        <p class="date"><font-awesome-icon icon="fa-regular fa-calendar" /> May 15, 2020</p>
+                        <p class="view"><font-awesome-icon icon="fa-regular fa-eye" /> 1,993 views</p>
+                    </div>
+                </div>
+            </div>
+            <div class="all-posts">
+                Get into details now? 
+                <span>
+                    View all posts 
+                    <font-awesome-icon icon="fa-solid fa-arrow-right" />
+                    <div class="underline"></div>
+                </span>
+            </div>
+        </section>
     </main>
 </template>
 
@@ -619,6 +672,184 @@
                         background-color: $primary-color;
                         color: white;
                     }
+                }
+            }
+        }
+    }
+
+    // BLOG
+    section.blog {
+        padding: 2rem 0;
+        position: relative;
+        background-color: #f5f7fa;
+        background-image: url('../assets/img/maxcoach-shape-03.png');
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+
+        .circle {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            border: 12px solid #ECC5AB;
+
+            position: absolute;
+            top: 230px;
+            left: 320px;
+        }
+
+        .titles {
+            margin: 2rem 0;
+            text-align: center;
+
+            .hand-writing {
+                font-size: 50px;
+            }
+
+            .title {
+                font-size: 40px;
+                font-weight: 600;
+                color: $titles-color;
+            }
+        }
+
+        .wrapper {
+            @include flex(row, center, center);
+
+            .card-sm {
+                width: 250px;
+                background-color: white;
+                position: relative;
+
+                .img-wrapper {
+                    width: 100%;
+
+                    img {
+                        width: 100%;
+                    }
+                }
+
+                .info {
+                    padding: 1rem;
+
+                    p {
+                        color: $text-color;
+                    }
+
+                    .topic {
+                        text-transform: uppercase;
+                    }
+
+                    h2 {
+                        font-size: 18px;
+                        font-weight: 600;
+                        color: $titles-color;
+                        margin-bottom: 1rem;
+                    }
+
+                    .date {
+                        font-size: 14px;
+                        margin-bottom: 0.5rem;
+                    }
+
+                    .view {
+                        font-size: 14px;
+                        margin-bottom: 1rem;
+                    }
+                }
+            }
+
+            .card-b {
+                top: 40px;
+            }
+
+            .card-t {
+                bottom: 40px;
+            }
+
+            .card {
+                width: 500px;
+                margin: 0 3rem;
+                position: relative;
+
+                .shape1 {
+                    position: absolute;
+                    bottom: -70px;
+                    right: -85px;
+                    z-index: 0;
+                }
+
+                .shape2 {
+                    position: absolute;
+                    top: -15px;
+                    left: -95px;
+                    z-index: 0;
+                }
+
+                .img-wrapper {
+                    width: 100%;
+                    height: 100%;
+
+                    img {
+                        filter: brightness(80%);
+                    }
+                }
+
+                .info {
+                    width: 100%;
+                    position: absolute;
+                    bottom: 0;
+                    color: white;
+                    padding: 2rem 2rem 4rem 2rem;
+
+                    .topic {
+                        text-transform: uppercase;
+                        font-size: 18px;
+                    }
+
+                    h2 {
+                        font-size: 30px;
+                        font-weight: 600;
+                        margin-bottom: 1rem;
+                    }
+
+                    .date {
+                        font-size: 16px;
+                        margin-right: 1rem;
+                    }
+
+                    .view {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+
+        .all-posts {
+            font-size: 17px;
+            margin: 4rem 0;
+            text-align: center;
+            color: $text-color;
+            font-weight: 600;
+
+            span {
+                display: inline-block;
+                color: $primary-color;
+                position: relative;
+                cursor: pointer;
+
+                .underline {
+                    width: 100%;
+                    height: 1px;
+                    background-color: #e7e8e8;
+
+                    position: absolute;
+                    bottom: 0;
+                    transition: all 0.3s ease-in;
+                }
+
+                &:hover .underline {
+                    background-color: $primary-color;
                 }
             }
         }
