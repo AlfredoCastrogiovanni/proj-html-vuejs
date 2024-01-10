@@ -251,6 +251,55 @@
                 </span>
             </div>
         </section>
+        <!-- EVENTS -->
+        <section class="events">
+            <div class="titles">
+                <div class="hand-writing">Upcoming Events</div>
+                <div class="title">let's work together</div>
+            </div>
+            <div class="container">
+                <article class="event">
+                    <div class="img-wrapper">
+                        <img src="../assets/img/events/artist-event-04-250x300.jpg" alt="">
+                    </div>
+                    <div class="info">
+                        <p class="date">Apr 22, 2021</p>
+                        <h2>Storytelling Workshop</h2>
+                        <p class="place"><font-awesome-icon icon="fa-solid fa-location-dot" /> Texas, US</p>
+                    </div>
+                </article>
+                <article class="event">
+                    <div class="img-wrapper">
+                        <img src="../assets/img/events/artist-event-03-250x300.jpg" alt="">
+                    </div>
+                    <div class="info">
+                        <p class="date">Oct 10, 2020</p>
+                        <h2>Painting Art Contest 2020</h2>
+                        <p class="place"><font-awesome-icon icon="fa-solid fa-location-dot" /> New York, US</p>
+                    </div>
+                </article>
+                <article class="event">
+                    <div class="info text-end">
+                        <p class="date">Nov 23, 2020</p>
+                        <h2>International Art Fair 2020</h2>
+                        <p class="place"><font-awesome-icon icon="fa-solid fa-location-dot" /> Hamburg, Germany</p>
+                    </div>
+                    <div class="img-wrapper">
+                        <img src="../assets/img/events/artist-event-02.jpg" alt="">
+                    </div>
+                </article>
+                <article class="event">
+                    <div class="info text-end">
+                        <p class="date">Dec 15, 2020</p>
+                        <h2>Street Performance: Call for Artist</h2>
+                        <p class="place"><font-awesome-icon icon="fa-solid fa-location-dot" /> Illinois, US</p>
+                    </div>
+                    <div class="img-wrapper">
+                        <img src="../assets/img/events/artist-event-01-250x300.jpg" alt="">
+                    </div>
+                </article>
+            </div>
+        </section>
     </main>
 </template>
 
@@ -258,6 +307,74 @@
     @use '../scss/general.scss' as *;
     @use '../scss/partials/mixins' as *;
     @use '../scss/partials/variables' as *;
+
+    section.events {
+        padding: 2rem 0;
+
+        .titles {
+            margin: 3rem 0;
+            text-align: center;
+
+            .hand-writing {
+                font-size: 50px;
+            }
+
+            .title {
+                font-size: 40px;
+                font-weight: 600;
+                color: $titles-color;
+            }
+        }
+
+        .container {
+            width: 1200px;
+            margin: 0 auto;
+            @include flex(row, center);
+            flex-wrap: wrap;
+
+            article.event {
+                width: calc(50% - 1rem);
+                margin: 0 1rem 2rem 0;
+                @include flex();
+
+                .img-wrapper {
+                    width: 250px;
+                    height: 300px;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+
+                .info {
+                    @include flex(column, center);
+                    padding: 0 2rem;
+
+                    .date {
+                        text-transform: uppercase;
+                        color: $text-color;
+                    }
+
+                    h2 {
+                        font-size: 20px;
+                        font-weight: 600;
+                        color: $titles-color;
+                        margin: 0.75rem 0;
+                    }
+
+                    .place {
+                        font-size: 13px;
+                        color: $text-color;
+                    }
+                }
+            }
+        }
+    }
+
+
+
+
 
     // OPTIONS
     section.options {
