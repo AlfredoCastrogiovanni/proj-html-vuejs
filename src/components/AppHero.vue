@@ -35,7 +35,6 @@
     @use '../scss/partials/variables' as *;
 
     .hero {
-        // height: 800px;
         background-color: #fbf9f6;
         position: relative;
 
@@ -137,6 +136,12 @@
                     left: 113px;
                 }
             }
+        }
+    }
+
+    @media all and (min-width: 1920px) {
+        .hero .container .left-imgs .shape4 {
+            left: 640px;
         }
     }
 </style>

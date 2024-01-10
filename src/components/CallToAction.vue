@@ -21,6 +21,7 @@
 
 
     .callToAction {
+        height: 50px;
         @include flex(row, center, center);
         background-color: $third-color;
         .container {

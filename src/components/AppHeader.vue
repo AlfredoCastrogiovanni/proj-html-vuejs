@@ -1,14 +1,30 @@
 <script>
     export default {
     name: "AppHeader",
+    data() {
+        return {
+            windowTop: 0,
+        }
+    },
+    methods: {
+        onScroll(e) {
+            this.windowTop = window.top.scrollY /* or: e.target.documentElement.scrollTop */
+        }
+    },
     props: {
         navLinks: Array
-    }
+    },
+    mounted() {
+        window.addEventListener("scroll", this.onScroll)
+    },
+    beforeDestroy() {
+        window.removeEventListener("scroll", this.onScroll)
+    },
     }
 </script>
 
 <template>
-    <header>
+    <header :class="(windowTop > 0) ? 'box-shadow' : '' ">
         <div class="container">
             <div class="logo">
                 <img src="../assets/img/logo.png" alt="MaxCoach's logo">
@@ -35,8 +51,18 @@
     @use '../scss/partials/mixins' as *;
     @use '../scss/partials/variables' as *;
 
+
+    .box-shadow {
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 5px;
+    }
+
     header {
+        width: 100%;
         height: 80px;
+        background-color: white;
+        position: sticky;
+        top: 0;
+        z-index: 10;
 
         .container {
             max-width: 1600px;
