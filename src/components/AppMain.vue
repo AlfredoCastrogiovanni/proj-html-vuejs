@@ -320,73 +320,6 @@
     @use '../scss/partials/mixins' as *;
     @use '../scss/partials/variables' as *;
 
-
-    section.newsletter {
-        padding: 3rem 0;
-        background-color: #244186;
-        color: white;
-        font-family: "Lora", serif;
-        position: relative;
-
-        .shape1 {
-            position: absolute;
-            bottom: 0;
-            right: 0;
-        }
-
-        .shape2 {
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
-        
-        .wrapper {
-            @include flex(row, center, center);
-
-            .title {
-                margin-right: 5rem;
-                font-size: 30px;
-                font-weight: 400;
-                text-align: end;
-            }
-
-            .input-control {
-                @include flex(row, center, center);
-                border-bottom: 2px solid rgba($color: white, $alpha: 0.5);
-
-                input {
-                    width: 500px;
-                    height: 60px;
-                    background-color: transparent;
-                    border: none;
-                    font-size: 25px;
-                    color: white;
-
-                    &::placeholder {
-                        font-size: 20px;
-                        color: white;
-                        font-weight: 400;
-                        font-family: "Lora", serif;
-                    }
-
-                    &:focus-visible {
-                        outline: none;
-                    }
-                }
-
-                .arrow {
-                    font-size: 30px;
-                }
-
-                &:hover {
-                    border-color: rgba($color: white, $alpha: 0.8);
-                }
-            }
-        }
-    }
-
-
-
     // OPTIONS
     section.options {
         padding: 5rem 0;
@@ -1043,6 +976,71 @@
                         font-size: 13px;
                         color: $text-color;
                     }
+                }
+            }
+        }
+    }
+
+     // NEWSLETTER
+    section.newsletter {
+        padding: 3rem 0;
+        background-color: #244186;
+        color: white;
+        font-family: "Lora", serif;
+        position: relative;
+
+        .shape1 {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+
+        .shape2 {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .wrapper {
+            @include flex(row, center, center);
+
+            .title {
+                margin-right: 5rem;
+                font-size: 30px;
+                font-weight: 400;
+                text-align: end;
+            }
+
+            .input-control {
+                @include flex(row, center, center);
+                border-bottom: 2px solid rgba($color: white, $alpha: 0.5);
+
+                input {
+                    width: 500px;
+                    height: 60px;
+                    background-color: transparent;
+                    border: none;
+                    font-size: 25px;
+                    color: white;
+
+                    &::placeholder {
+                        font-size: 20px;
+                        color: white;
+                        font-weight: 400;
+                        font-family: "Lora", serif;
+                    }
+
+                    &:focus-visible {
+                        outline: none;
+                    }
+                }
+
+                .arrow {
+                    font-size: 30px;
+                }
+
+                &:hover {
+                    border-color: rgba($color: white, $alpha: 0.8);
                 }
             }
         }
