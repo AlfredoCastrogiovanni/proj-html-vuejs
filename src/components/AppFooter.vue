@@ -81,6 +81,12 @@
 
                     li {
                         margin-bottom: 1rem;
+                        transition: all 0.2s ease-in;
+                        cursor: pointer;
+
+                        &:hover {
+                            color: $primary-color;
+                        }
                     }
                 }
 
@@ -92,6 +98,11 @@
 
                     & > * {
                         margin-right: 2rem;
+                        transition: all 0.2s ease-in;
+
+                        &:hover {
+                            color: $primary-color;
+                        }
                     }
                 }
             }

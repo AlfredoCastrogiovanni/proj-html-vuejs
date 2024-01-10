@@ -95,16 +95,21 @@
                 }
 
                 button {
-                padding: 1rem 2rem;
+                    padding: 1rem 2rem;
 
-                border: none;
-                border-radius: 5px;
+                    border: none;
+                    border-radius: 5px;
 
-                font-size: 13px;
-                font-weight: 800;
-                
-                color: white;
-                background-color: $primary-color;
+                    font-size: 13px;
+                    font-weight: 800;
+                    
+                    color: white;
+                    background-color: $primary-color;
+                    transition: all 0.2s ease-in;
+
+                    &:hover {
+                            background-color: $secondary-color;
+                    }
                 }
             }
 

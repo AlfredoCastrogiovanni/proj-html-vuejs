@@ -56,6 +56,11 @@
                 
                 color: white;
                 background-color: $primary-color;
+                transition: all 0.2s ease-in;
+
+                    &:hover {
+                            background-color: $secondary-color;
+                    }
             }
         }
     }

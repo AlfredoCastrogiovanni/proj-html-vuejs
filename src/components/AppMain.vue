@@ -221,7 +221,7 @@
                     <img src="../assets/img/blog/shape-02.svg" alt="" class="shape1">
                     <img src="../assets/img/blog/maxcoach-shape-05-150x150.png" alt="" class="shape2">
                     <div class="img-wrapper">
-                        <img src="../assets/img/blog/artist-blog-02-500x680.jpg" alt="">
+                        <img src="../assets/img/blog/artist-blog-02-500x680.jpg" alt="" class="card-bg">
                     </div>
                     <div class="info">
                         <p class="topic">Artist</p>
@@ -443,16 +443,22 @@
                 }
 
                 button {
-                padding: 1rem 2rem;
+                    padding: 1rem 2rem;
 
-                border: none;
-                border-radius: 5px;
+                    border: none;
+                    border-radius: 5px;
 
-                font-size: 13px;
-                font-weight: 800;
-                
-                color: white;
-                background-color: $primary-color;
+                    font-size: 13px;
+                    font-weight: 800;
+                    
+                    color: $primary-color;
+                    background-color: rgb(253, 240, 234);
+                    transition: all 0.2s ease-in;
+
+                    &:hover {
+                            background-color: $primary-color;
+                            color: white;
+                    }
                 }
             }
         }
@@ -473,6 +479,7 @@
                 z-index: 3;
 
                 img {
+                    transition: all 0.3s ease-in;
 
                     &:first-of-type {
                         width: 100%;
@@ -520,7 +527,6 @@
                     right: -75px;
                     z-index: 5;
                 }
-
             }
 
             .wave {
@@ -781,12 +787,15 @@
                 width: 250px;
                 background-color: white;
                 position: relative;
+                cursor: pointer;
 
                 .img-wrapper {
                     width: 100%;
+                    overflow: hidden;
 
                     img {
                         width: 100%;
+                        transition: all 0.3s ease-in;
                     }
                 }
 
@@ -806,6 +815,11 @@
                         font-weight: 600;
                         color: $titles-color;
                         margin-bottom: 1rem;
+                        transition: all 0.2s ease-in;
+
+                        &:hover {
+                            color: $primary-color;
+                        }
                     }
 
                     .date {
@@ -817,6 +831,10 @@
                         font-size: 14px;
                         margin-bottom: 1rem;
                     }
+                }
+
+                &:hover img {
+                    transform: scale3d(1.1, 1.1, 1.1);
                 }
             }
 
@@ -832,6 +850,7 @@
                 width: 500px;
                 margin: 0 3rem;
                 position: relative;
+                cursor: pointer;
 
                 .shape1 {
                     position: absolute;
@@ -850,9 +869,11 @@
                 .img-wrapper {
                     width: 100%;
                     height: 100%;
+                    overflow: hidden;
 
                     img {
                         filter: brightness(80%);
+                        transition: all 0.3s ease-in;
                     }
                 }
 
@@ -882,6 +903,10 @@
                     .view {
                         font-size: 16px;
                     }
+                }
+
+                &:hover .card-bg {
+                    transform: scale3d(1.1, 1.1, 1.1);
                 }
             }
         }
@@ -949,10 +974,12 @@
                 .img-wrapper {
                     width: 250px;
                     height: 300px;
+                    overflow: hidden;
 
                     img {
                         width: 100%;
                         height: 100%;
+                        transition: all 0.3s ease-in;
                     }
                 }
 
@@ -976,6 +1003,10 @@
                         font-size: 13px;
                         color: $text-color;
                     }
+                }
+
+                &:hover img {
+                    transform: scale3d(1.1, 1.1, 1.1);
                 }
             }
         }
