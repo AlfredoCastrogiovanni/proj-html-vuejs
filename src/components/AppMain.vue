@@ -300,6 +300,18 @@
                 </article>
             </div>
         </section>
+        <!-- NEWSLETTER -->
+        <section class="newsletter">
+            <img src="../assets/img/newsletter/artist-shape-color-paint-bottom-right-300x153.png" alt="" class="shape1">
+            <img src="../assets/img/newsletter/artist-shape-color-paint-top-left-300x170.png" alt="" class="shape2">
+            <div class="wrapper">
+                <div class="title">Newsletter to get <br> in touch</div>
+                <div class="input-control">
+                    <input type="email" placeholder="Your Email">
+                    <div class="arrow"><font-awesome-icon icon="fa-solid fa-arrow-right" /></div>
+                </div>
+            </div>
+        </section>
     </main>
 </template>
 
@@ -308,71 +320,70 @@
     @use '../scss/partials/mixins' as *;
     @use '../scss/partials/variables' as *;
 
-    section.events {
-        padding: 2rem 0;
 
-        .titles {
-            margin: 3rem 0;
-            text-align: center;
+    section.newsletter {
+        padding: 3rem 0;
+        background-color: #244186;
+        color: white;
+        font-family: "Lora", serif;
+        position: relative;
 
-            .hand-writing {
-                font-size: 50px;
-            }
-
-            .title {
-                font-size: 40px;
-                font-weight: 600;
-                color: $titles-color;
-            }
+        .shape1 {
+            position: absolute;
+            bottom: 0;
+            right: 0;
         }
 
-        .container {
-            width: 1200px;
-            margin: 0 auto;
-            @include flex(row, center);
-            flex-wrap: wrap;
+        .shape2 {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        .wrapper {
+            @include flex(row, center, center);
 
-            article.event {
-                width: calc(50% - 1rem);
-                margin: 0 1rem 2rem 0;
-                @include flex();
+            .title {
+                margin-right: 5rem;
+                font-size: 30px;
+                font-weight: 400;
+                text-align: end;
+            }
 
-                .img-wrapper {
-                    width: 250px;
-                    height: 300px;
+            .input-control {
+                @include flex(row, center, center);
+                border-bottom: 2px solid rgba($color: white, $alpha: 0.5);
 
-                    img {
-                        width: 100%;
-                        height: 100%;
+                input {
+                    width: 500px;
+                    height: 60px;
+                    background-color: transparent;
+                    border: none;
+                    font-size: 25px;
+                    color: white;
+
+                    &::placeholder {
+                        font-size: 20px;
+                        color: white;
+                        font-weight: 400;
+                        font-family: "Lora", serif;
+                    }
+
+                    &:focus-visible {
+                        outline: none;
                     }
                 }
 
-                .info {
-                    @include flex(column, center);
-                    padding: 0 2rem;
+                .arrow {
+                    font-size: 30px;
+                }
 
-                    .date {
-                        text-transform: uppercase;
-                        color: $text-color;
-                    }
-
-                    h2 {
-                        font-size: 20px;
-                        font-weight: 600;
-                        color: $titles-color;
-                        margin: 0.75rem 0;
-                    }
-
-                    .place {
-                        font-size: 13px;
-                        color: $text-color;
-                    }
+                &:hover {
+                    border-color: rgba($color: white, $alpha: 0.8);
                 }
             }
         }
     }
-
-
 
 
 
@@ -972,4 +983,68 @@
         }
     }
 
+    // EVENTS
+    section.events {
+        padding: 2rem 0;
+
+        .titles {
+            margin: 3rem 0;
+            text-align: center;
+
+            .hand-writing {
+                font-size: 50px;
+            }
+
+            .title {
+                font-size: 40px;
+                font-weight: 600;
+                color: $titles-color;
+            }
+        }
+
+        .container {
+            width: 1200px;
+            margin: 0 auto;
+            @include flex(row, center);
+            flex-wrap: wrap;
+
+            article.event {
+                width: calc(50% - 1rem);
+                margin: 0 1rem 2rem 0;
+                @include flex();
+
+                .img-wrapper {
+                    width: 250px;
+                    height: 300px;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+
+                .info {
+                    @include flex(column, center);
+                    padding: 0 2rem;
+
+                    .date {
+                        text-transform: uppercase;
+                        color: $text-color;
+                    }
+
+                    h2 {
+                        font-size: 20px;
+                        font-weight: 600;
+                        color: $titles-color;
+                        margin: 0.75rem 0;
+                    }
+
+                    .place {
+                        font-size: 13px;
+                        color: $text-color;
+                    }
+                }
+            }
+        }
+    }
 </style>
