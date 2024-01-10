@@ -9,6 +9,9 @@
         Slide,
         Pagination,
         Navigation,
+    },
+    props: {
+        cardList: Object
     }
     }
 </script>
@@ -100,7 +103,7 @@
                 <div class="title">Why do people love me?</div>
             </div>
             <div class="carousel-wrapper">
-                <Carousel wrap-around="true" itemsToShow="3">
+                <Carousel wrap-around=true itemsToShow=3>
                     <Slide :key="0">
                     <div class="slide">
                         <h2>High level of efficiency and scientific teaching methods</h2>
@@ -166,6 +169,33 @@
                         <Pagination />
                     </template>
                 </Carousel>
+            </div>
+        </section>
+        <!-- COACHING -->
+        <section class="coaching">
+            <div class="container">
+                <div class="titles">
+                    <div class="hand-writing">Artist Coaching</div>
+                    <h1 class="title">Latest Online Courses</h1>
+                </div>
+                <div class="card-wrapper">
+                    <article class="card" v-for="card in cardList" :key="card.id">
+                        <div class="img-wrapper">
+                            <img :src="card.img" :alt="card.title + '\'s image'">
+                        </div>
+                        <div class="desc">
+                            <p class="price">${{ card.price }}.00</p>
+                            <h2>{{ card.title }}</h2>
+                            <div class="info">
+                                <span class="lessons"><font-awesome-icon icon="fa-regular fa-file-lines" /> {{ card.lessons }} lessons</span>
+                                <span class="students"><font-awesome-icon icon="fa-regular fa-user" /> {{ card.students }} students</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="all-courses">
+                    <button>View all courses <font-awesome-icon icon="fa-solid fa-arrow-right" /></button>
+                </div>
             </div>
         </section>
     </main>
@@ -391,8 +421,8 @@
         }
     }
 
-        // TESTIMONIALS
-        section.testimonials {
+    // TESTIMONIALS
+    section.testimonials {
         padding: 1rem 0;
         background-color: #fbfaf8;
 
@@ -478,6 +508,121 @@
 
             .carousel__pagination {
                 margin: 3rem 0;
+            }
+        }
+    }
+
+    // COACHING
+    section.coaching {
+        padding: 1rem 0;
+
+        .container {
+            width: 1600px;
+            margin: 0 auto;
+
+            .titles {
+                margin-bottom: 2rem;
+                text-align: center;
+                padding-top: 4rem;
+
+                .hand-writing {
+                    font-size: 50px
+                }
+
+                .title {
+                    font-size: 40px;
+                    font-weight: 600;
+                    color: $titles-color;
+                }
+            }
+
+            .card-wrapper {
+                @include flex(row, center);
+                flex-wrap: wrap;
+
+                .card {
+                    width: calc(100% / 4 - 2rem);
+                    margin-right: 2rem;
+                    margin-bottom: 3rem;
+
+                    .img-wrapper {
+                        width: 100%;
+                        height: 350px;
+                        overflow: hidden;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            transition: all 0.3s ease-in;
+                        }
+                    }
+
+                    .desc {
+                        border: 2px solid transparent;
+                        padding: 1rem;
+                        margin-right: 2rem;
+                        background-color: white;
+                        transition: all 0.3s ease-in;
+
+                        .price {
+                            color: $primary-color;
+                            font-weight: 700;
+                            font-size: 18px;
+                            margin-bottom: 0.5rem;
+                        }
+
+                        h2 {
+                            margin-bottom: 1rem;
+                            font-size: 20px;
+                            font-weight: 500;
+                            padding-right: 2rem;
+                            color: $titles-color;
+                        }
+
+                        .info {
+                            font-size: 15px;
+                            color: $text-color;
+
+                            .lessons {
+                                margin-right: 1rem;
+                            }
+                        }
+                    }
+                    &:hover .desc{
+                        border: 2px solid $primary-color;
+                        transform: translateY(-50px);
+                    }
+
+                    &:hover img {
+                        transform: scale3d(1.1, 1.1, 1.1);
+                    }
+
+                }
+            }
+
+            .all-courses {
+                margin-bottom: 3rem;
+                text-align: center;
+
+                button {
+                    padding: 1rem 2rem;
+
+                    border: none;
+                    border-radius: 5px;
+
+                    font-size: 13px;
+                    font-weight: 800;
+                    
+                    color: $primary-color;
+                    background-color: rgb(253, 240, 234);
+
+                    transition: all 0.2s ease-in;
+
+                    &:hover {
+                        background-color: $primary-color;
+                        color: white;
+                    }
+                }
             }
         }
     }
