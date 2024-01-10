@@ -94,9 +94,15 @@
 
                     li {
                         margin-right: 2.2rem;
+                        transition: all 0.2s ease-in;
+                        cursor: pointer;
 
                         .arrow {
                             font-size: 10px;
+                        }
+
+                        &:hover {
+                            color: $primary-color;
                         }
                     }
                 }
@@ -110,6 +116,11 @@
                     margin-right: 1.5rem;
                     font-size: 19px;
                     color: $text-color;
+                    transition: all 0.2s ease-in;
+
+                    &:hover {
+                        color: $primary-color;
+                    }
                 } 
             }
         }
